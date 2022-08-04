@@ -1,0 +1,22 @@
+private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        //String[] data = {jTextField1.getText(), jTextField2.getText(),jTextField3.getText(),jTextField4.getText()};
+        table.pack();
+        String gender = null;
+        table.setLocationRelativeTo(null);
+        //table.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        if("".equals(jTextField1.getText()) || "".equals(jTextField2.getText()) || "".equals(jTextField3.getText()) || "".equals(jTextField4.getText()) || "Please choose one of them".equals(jComboBox1.getSelectedItem().toString())){
+            JOptionPane.showMessageDialog(this, "Please Enter All Data!!");
+        }
+        else{
+            if("I don't want to choose".equals(jComboBox1.getSelectedItem().toString())){
+                gender = "-";
+            }else if("Female".equals(jComboBox1.getSelectedItem().toString())){
+                gender = "Female";
+            }else if("Male".equals(jComboBox1.getSelectedItem().toString())){
+                gender = "Male";
+            }
+            JTable.addRow(new Object[]{jTextField1.getText(), jTextField2.getText(),jTextField3.getText(),jTextField4.getText(),gender});
+            table.setVisible(true);
+        }
+    }  
